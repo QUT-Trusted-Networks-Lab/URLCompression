@@ -1,5 +1,3 @@
-from glob import iglob
-from unittest.util import unorderable_list_difference
 from dahuffman import HuffmanCodec
 import zlib
 import os
@@ -140,8 +138,6 @@ def Decompress(URL):
     return (preamble + decomp + postamble)
 
 
-number_correct = 0
-number_incorrect = 0
 total_size_before = 0
 total_size_after = 0
 
@@ -152,8 +148,6 @@ for URL in URLs:
     total_size_before += len(URL.encode('utf-8'))
     comp = Compress(URL)
     total_size_after += len(comp)
-
-print(timer() - start)
 
 print("Compressed to:",((total_size_after+os.path.getsize('codec')+ os.path.getsize('commons.txt') + os.path.getsize('suffix.txt'))/total_size_before)*100,"%")
 print("Size before compression: " + str(total_size_before) + " bytes")
