@@ -1,5 +1,4 @@
 from dahuffman import HuffmanCodec
-import zlib
 import os
 import sys
 import pandas
@@ -94,12 +93,10 @@ def Compress(URL):
             compressed = codec.encode(urlReplacedWords)
             headerInt += 128
         except:
-            compressed = zlib.compress(urlReplacedWords.encode('utf8'))
-            compressed = brotlicffi.compress(urlReplacedWords.encode('utf8'),quality=5)
+            compressed = brotlicffi.compress(urlReplacedWords.encode('utf8'),quality=6)
             headerInt += 0
     else:
-        compressed = zlib.compress(urlReplacedWords.encode('utf8'))
-        compressed = brotlicffi.compress(urlReplacedWords.encode('utf8'),quality=5)
+        compressed = brotlicffi.compress(urlReplacedWords.encode('utf8'),quality=6)
         headerInt += 0
 
     headerBin = GenerateBinaryHeader(headerInt)
