@@ -27,8 +27,6 @@ def findSuffix(URLs):
                 suffix_dict[URL[URL.rindex('.'):]] = 1
         except:
             error += 1
-    print(list(dict(sorted(suffix_dict.items(), key=lambda item: item[1])[-10:]).keys()))
-    print(list(dict(sorted(suffix_dict.items(), key=lambda item: item[1])[-10:]).values()))
     return(list(dict(sorted(suffix_dict.items(), key=lambda item: item[1])[-4:]).keys()))
 
 def stripHeaderStrings(URL,suffixsStrings):
