@@ -21,7 +21,7 @@ The following libraries are required in order to use this program
   ```
   pip install brotlicffi
   ```
-* All required libraries can be install using the requirements.txt file
+* It is recommended you install all packages using the requirements.txt file as this will ensure the correct spacy model is also installed.
   ```
   pip install -r requirements.txt
   ```
